@@ -9,11 +9,21 @@ public class Customer {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(nullable = false, unique = true) private String document;
-    @Column(nullable = false) private String fullName;
-    @Column(nullable = false, unique = true) private String email;
-    @Column(nullable = false) private Integer creditScore;
-    @Column(nullable = false, precision = 15, scale = 2) private BigDecimal creditLimit;
+
+    @Column(nullable = false, unique = true)
+    private String document;
+
+    @Column(nullable = false)
+    private String fullName;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private Integer creditScore;
+
+    @Column(nullable = false, precision = 15, scale = 2)
+    private BigDecimal creditLimit;
 
     protected Customer() {}
 
