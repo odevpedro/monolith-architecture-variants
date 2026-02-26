@@ -4,29 +4,17 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-
 @Entity
 @Table(name = "credits")
 public class Credit {
 
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-
-    @Column(nullable = false)
-    private String customerId;
-
-    @Column(nullable = false, precision = 15, scale = 2)
-    private BigDecimal requestedAmount;
-
-    @Column(precision = 15, scale = 2)
-    private BigDecimal approvedAmount;
-
-    @Enumerated(EnumType.STRING) @Column(nullable = false)
-    private CreditStatus status;
+    @Id @GeneratedValue(strategy = GenerationType.UUID) private String id;
+    @Column(nullable = false) private String customerId;
+    @Column(nullable = false, precision = 15, scale = 2) private BigDecimal requestedAmount;
+    @Column(precision = 15, scale = 2) private BigDecimal approvedAmount;
+    @Enumerated(EnumType.STRING) @Column(nullable = false) private CreditStatus status;
     private String rejectionReason;
-
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    @Column(nullable = false) private LocalDateTime createdAt;
 
     protected Credit() {}
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmailNotificationAdapter implements NotificationService {
+
     private final JavaMailSender mailSender;
     public EmailNotificationAdapter(JavaMailSender mailSender) { this.mailSender = mailSender; }
 

@@ -18,9 +18,9 @@ import java.util.Optional;
 public class CreditService {
 
     private final JpaCreditRepository creditRepository;
-    private final CustomerService customerService;
+    private final CustomerService customerService;         // interface publica do modulo customers
     private final CreditEvaluator creditEvaluator;
-    private final NotificationService notificationService;
+    private final NotificationService notificationService; // interface publica do modulo notifications
 
     public CreditService(JpaCreditRepository creditRepository, CustomerService customerService,
                          CreditEvaluator creditEvaluator, NotificationService notificationService) {
@@ -31,6 +31,7 @@ public class CreditService {
     }
 
     public Credit requestCredit(String customerId, BigDecimal amount) {
+        // Acessa customers pela interface publica — nunca pelo JpaCustomerRepository diretamente
         Customer customer = customerService.findById(customerId)
             .orElseThrow(() -> new RuntimeException("Cliente nao encontrado: " + customerId));
 

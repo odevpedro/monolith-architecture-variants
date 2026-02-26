@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 /**
  * Regra de negocio isolada.
  * Testavel sem Spring, sem banco, sem HTTP.
+ * Qualquer mudanca na regra de aprovacao acontece AQUI e SOMENTE AQUI.
  */
 @Component
 public class CreditEvaluator {
