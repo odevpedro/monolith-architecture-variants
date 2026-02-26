@@ -2,6 +2,10 @@
 
 ## Contexto
 
+## Divisão do Repositório
+
+Esse repositório é divido em branches: tradicional, modular & distribuida. Para exemplificar o uso do monolito em cada um desses contextos.
+
 Este exemplo demonstra um monolito tradicional, onde não existem fronteiras claras entre camadas ou domínios.
 
 Regra de negócio, acesso a banco e integração externa coexistem dentro das mesmas classes.
